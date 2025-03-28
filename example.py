@@ -1,7 +1,7 @@
 from PortfolioManager import PortfolioManager
 
 # Define a list of stock tickers
-tickers = ["AAPL", "MSFT", "GOOGL"]
+tickers = ["AAPL", "MSFT", "GOOGL", "AMZN", "meta", "TSLA", "BRK-B", "JPM", "JNJ", "V", "PG", "UNH", "MA", "INTC", "NVDA", "HD", "DIS", "VZ", "ADBE", "CRM"]
 
 # Initialize the PortfolioManager
 pm = PortfolioManager(tickers)
@@ -30,6 +30,9 @@ pm.plot_efficient_frontier()
 # Plot asset weights (e.g., for the min variance portfolio)
 pm.plot_asset_weights(min_var_portfolio)
 
+# plot asset weights (max sharpe)
+pm.plot_asset_weights(max_sharpe_portfolio)
+
 # Backtest portfolio performance over the last 5 years using the min variance strategy
-results_df, plt_obj = pm.backtest_portfolios(strategy="min_variance", backtest_years=5)
+results_df, plt_obj = pm.backtest_portfolios(strategy="max_sharpe", backtest_years=5)
 print(results_df)
