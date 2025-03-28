@@ -1,4 +1,4 @@
-from portfolio_manager import PortfolioManager
+from PortfolioManager import PortfolioManager
 
 # Define a list of stock tickers
 tickers = ["AAPL", "MSFT", "GOOGL"]
